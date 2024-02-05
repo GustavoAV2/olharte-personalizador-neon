@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./ui/globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import Header from "./ui/Header";
+import { poppins } from "./ui/fonts";
 
 export const metadata: Metadata = {
   title: "Olharte - Personalizador Neon",
@@ -16,7 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={poppins.className}>
+        <div className="flex flex-col h-screen w-full bg-company-gradient">
+          <Header />
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
