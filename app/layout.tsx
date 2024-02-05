@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./ui/globals.css";
 import Header from "./ui/Header";
 import { poppins } from "./ui/fonts";
+import Footer from "./ui/Footer";
 
 export const metadata: Metadata = {
   title: "Olharte - Personalizador Neon",
@@ -19,6 +20,7 @@ export default function RootLayout({
         <div className="flex flex-col h-screen w-full bg-company-gradient">
           <Header />
           {children}
+          <Footer />
         </div>
       </body>
     </html>
