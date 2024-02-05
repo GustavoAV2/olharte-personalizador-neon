@@ -8,10 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        olharteGreen: "#00F2B1",
+        olharteBlue: "#00B7F4",
+      },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "company-gradient": "linear-gradient(to bottom, #00F2B1, #00B7F4)",
       },
     },
   },
