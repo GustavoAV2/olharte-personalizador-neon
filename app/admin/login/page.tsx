@@ -1,6 +1,6 @@
 import "../../ui/globals.css";
-import { loginUser } from "@/app/lib/data";
-import { useFormState, useFormStatus } from 'react-dom';
+import { getServerAuthSession } from "../../../scripts/admin_auth/auth";
+import Link from "next/link";
 
 export default function AdminLogin() {
     return <div className="flex flex-row w-full justify-center mt-8">
