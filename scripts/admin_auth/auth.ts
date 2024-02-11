@@ -25,6 +25,10 @@ import {
     pages: {
       signIn: '/admin/login', //(4) custom signin page path
     },
+    secret: process.env.NEXTAUTH_SECRET,
+    jwt: {
+      secret: process.env.NEXTAUTH_SECRET
+    },
     providers: [
       Credentials({
         name: "Credentials",
