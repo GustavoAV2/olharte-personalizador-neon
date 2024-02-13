@@ -10,17 +10,8 @@ export default async function AdminPage() {
   }
 
   return (
-    <main className="flex items-center justify-center h-screen">
-    {authSession?.user && 
-    <div>
-      <AdminSideBar user={authSession?.user} />
-    </div>}
-
-    {!authSession?.user && ( 
-      <Link className="font-medium mt-2 text-blue-600 hover:underline" href="/admin/login">
-        Login
-      </Link>
-    )}
+    <main className="h-screen">
+      <AdminSideBar user={authSession?.user}/>
     </main>
   );
 }

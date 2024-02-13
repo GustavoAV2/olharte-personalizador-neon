@@ -4,20 +4,20 @@ import React from "react";
 
 export default function AdminForm() {
   return ( 
-    //   <div className="">
-    //     <div>
-    //     Id : {user.id}
-    //     </div>
-    //     <div>
-    //     Name : {user.name}
-    //     </div>
-    //     <div>
-    //     Email : {user.email}
-    //     </div>
-    //     {<button className="font-medium mt-2 text-blue-600 hover:underline" onClick={handleLogout}>
-    //     Log out
-    //     </button> }
-    // </div>
+      <div className="">
+        <div>
+        Id : 
+        </div>
+        <div>
+        Name : 
+        </div>
+        <div>
+        Email : 
+        </div>
+        {<button className="font-medium mt-2 text-blue-600 hover:underline" >
+        Log out
+        </button> }
+    </div>
 
     //   if (form == 'admin'){
     //     return <div>
