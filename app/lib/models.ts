@@ -10,3 +10,14 @@ export type Font = {
   name: string;
   weight: number;
 }
+
+export type Color = {
+  id: string;
+  hexcode: string;
+}
+
+export type Image = {
+  id: string;
+  path: string;
+  filename: string;
+}
