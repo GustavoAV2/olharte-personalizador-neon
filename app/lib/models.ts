@@ -4,3 +4,9 @@ export type User = {
   username: string;
   password: string;
 };
+
+export type Font = {
+  id: string;
+  name: string;
+  weight: number;
+}
