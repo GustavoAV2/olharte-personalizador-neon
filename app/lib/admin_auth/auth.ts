@@ -3,27 +3,27 @@ import {
     getServerSession,
     type NextAuthOptions,
   } from "next-auth";
-  import Credentials from "../../node_modules/next-auth/providers/credentials";
+  import Credentials from "../../../node_modules/next-auth/providers/credentials";
   import { userService } from "../services/userService";
   
   export const authOptions: NextAuthOptions = {
     session: {
-      strategy: "jwt", //(1)
+      strategy: "jwt",
     },
     callbacks: {
       async jwt({ token, account, profile }) { 
-        if(account && account.type === "credentials") { //(2)
-          token.userId = account.providerAccountId; // this is Id that coming from authorize() callback 
+        if(account && account.type === "credentials") {
+          token.userId = account.providerAccountId;
         }
         return token;
       },
       async session({ session, token, user }) { 
-        session.user.id = token.userId; //(3)
+        session.user.id = token.userId;
         return session;
       },
     },
     pages: {
-      signIn: '/admin/login', //(4) custom signin page path
+      signIn: '/admin/login',
     },
     secret: process.env.NEXTAUTH_SECRET,
     jwt: {
@@ -42,10 +42,10 @@ import {
             password: string
            };
   
-          return userService.authenticate(username, password); //(5) 
+          return userService.loginUser(username, password);
         }
       })
     ],
   };
   
-  export const getServerAuthSession = () => getServerSession(authOptions); //(6)
+  export const getServerAuthSession = () => getServerSession(authOptions);

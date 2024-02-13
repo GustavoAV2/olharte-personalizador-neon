@@ -3,20 +3,6 @@ import { User } from '@/app/lib/models';
 const bcrypt = require('bcrypt');
 
 
-function authenticate(username: string, password: string) {
-  if(username !== "admin" && password !== "admin") {
-    return null;
-  }
-
-  const user = { 
-    id: "9001",
-    name: "Web Admin", 
-    email: "admin@example.com"};
-
-  return user; 
-}
-
-
 async function getUser(username: string) {
   try {
       const user = await sql`SELECT * FROM users WHERE username=${username}`;
@@ -24,7 +10,7 @@ async function getUser(username: string) {
   } catch (error) {
       throw new Error('Failed to fetch user.');
   }
-}
+} 
 
 export async function loginUser(username: string, password: string){
   const userFound = await getUser(username);
@@ -38,5 +24,6 @@ export async function loginUser(username: string, password: string){
 }
 
 export const userService = {
-  authenticate,
+  getUser,
+  loginUser
 };
