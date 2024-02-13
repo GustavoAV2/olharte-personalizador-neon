@@ -1,7 +1,7 @@
 
 "use client";
 
-import { User } from "../../scripts/admin_auth/types/user";
+import { User } from "../lib/models";
 import { signOut } from "next-auth/react";
 
 type AdminSideBarProps = {
@@ -9,10 +9,8 @@ type AdminSideBarProps = {
 }
 
 export default function AdminSideBar({ user }: AdminSideBarProps) {
-  let form = "user";
-
   const setForm = (page: string) => {
-    console.log('chamou')
+    console.log('Called')
   }
 
   const handleLogout = async () => {
@@ -81,9 +79,6 @@ export default function AdminSideBar({ user }: AdminSideBarProps) {
             </div>
             <div>
             Name : {user.name}
-            </div>
-            <div>
-            Email : {user.email}
             </div>
           </div>
         </div>

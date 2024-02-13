@@ -1,5 +1,5 @@
 import AdminSideBar from "../ui/AdminSideBar";
-import { getServerAuthSession } from "../../scripts/admin_auth/auth";
+import { getServerAuthSession } from "../lib/admin_auth/auth";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
